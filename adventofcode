@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+from cleo import Application, Command as BaseCommand
+from importlib import import_module
+from pathlib import Path
+from traceback import print_exc
+from time import perf_counter
+from functools import wraps
+
+
+def perf(f):
+    @wraps(f)
+    def wrapper(*args, **kwds):
+        start_time = perf_counter()
+        result = f(*args, **kwds)
+        print(perf_counter() - start_time)
+        return result
+    return wrapper
+
+
+ROOT_PATH = Path(__file__).resolve().parent
+
+
+class RunCommand(BaseCommand):
+    """
+    adventofcode
+    run
+        {day : day}
+        {star? : star}
+        {--o|output : show output}
+    """
+
+    def handle(self):
+        day = f'{self.argument("day"):0>2}'
+        star = self.argument('star')
+        stars = (star,) if star else ('1', '2')
+        for star in stars:
+            print(f'days/{day}/__init__.py: s{star}')
+            try:
+                self.run(day, star)
+            except BaseException:
+                print_exc()
+            print('_'*80)
+
+    def run(self, day, star):
+        module = getattr(import_module(f'days.{day}'), f's{star}')
+        with open(ROOT_PATH/f'days/{day}/s{star}.input') as f:
+            input_data = f.read().split('\n')
+        output = self._run(module, input_data)
+        if self.option('output'):
+            print(output)
+        with open(ROOT_PATH/f'days/{day}/s{star}.output', 'w') as f:
+            f.write(str(output))
+
+    @perf
+    def _run(self, module, input_data):
+        return module(input_data)
+
+
+if __name__ == '__main__':
+    application = Application()
+    application.add(RunCommand())
+    application.run()
