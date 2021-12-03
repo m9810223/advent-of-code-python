@@ -49,7 +49,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = ">3.8,<4"
-content-hash = "6be199720d79c3e108ef24aecc775af5b52a18cb15f9e2fe5fa78fc6f2c5aa25"
+content-hash = "a5e1d6d38254e32b4d06e32064933f9ae3a0651bc710ce334a1fd2fc7936cbe8"
 
 [metadata.files]
 cleo = [

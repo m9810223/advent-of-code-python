@@ -1,59 +1,62 @@
 # 🎄 Advent-of-code-python ⭐
 
-A Python CLI tool for adventofcode.
+Advent of code Python solutions and CLI tool.
 
 ---
 
-# Setup
+# CLI
+
+## setup
 
 ```
 $ poetry install
 $ poetry shell
 ```
 
-# CLI
-
 ## run latest day
 
 ```
-$ python adventofcode.py run
+$ aoc_run.py
+2021.02
+  part1 = 1561344
+    (100, 1): (0.006219 sec, 0.000064 sec)
+  part2 = 1848454425
+    (100, 1): (0.007637 sec, 0.000077 sec)
 ```
 
 ## run single day/part
 
 ```
-$ python adventofcode.py run [-y year] [day] [part]
+$ aoc_run.py [-y year] [day] [part]
+```
+
+## run all
+
+```
+$ aoc_run.py all
+2021.01
+  old_part1 = 1655
+    (100, 1): (0.006916 sec, 0.000073 sec)
+  part1 = 1655
+    (100, 1): (0.012736 sec, 0.000138 sec)
+  part2 = 1683
+    (100, 1): (0.013003 sec, 0.000127 sec)
+2021.02
+  part1 = 1561344
+    (100, 1): (0.005714 sec, 0.000056 sec)
+  part2 = 1848454425
+    (100, 1): (0.007264 sec, 0.000072 sec)
 ```
 
 # Example
 
 [`=> 2021/01/__init__.py`](2021/01/__init__.py)
 
-# Output
-
-```
-$ python adventofcode.py run
-<module '2021.01' from 'adventofcode/2021/01/__init__.py'>
-________________________________________________________________________________
-<function old_part1 at 0x7f02b36400d0>
-(1k, 1) -> (0.11475160000009055, 0.0001143000008596573)
-output = 1655
-________________________________________________________________________________
-<function part1 at 0x7f02b3640940>
-(1k, 1) -> (0.1937553999996453, 0.00019330000031914096)
-output = 1655
-________________________________________________________________________________
-<function part2 at 0x7f02b3640160>
-(1k, 1) -> (0.19324570000026142, 0.00019149999934597872)
-output = 1683
-
-```
-
 # Create files:
 
 ```
 mkdir -p ${year}/${day}
-touch $_/{__init__.py,{part1,part2}.input}
+touch $_/{__init__.py,input}
 ```
 
 ## input data
@@ -102,7 +105,7 @@ def part2(inputs):
 | :-----: | :----: | :----: |
 | Day🎄01 |   ⭐   |   ⭐   |
 | Day🎄02 |   ⭐   |   ⭐   |
-| Day🎄03 |        |        |
+| Day🎄03 |   ⭐   |   ⭐   |
 | Day🎄04 |        |        |
 | Day🎄05 |        |        |
 | Day🎄06 |        |        |
