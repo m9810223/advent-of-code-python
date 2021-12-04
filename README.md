@@ -11,7 +11,7 @@ Advent of code Python solutions and CLI tool.
 | Day🎄01 | Sonar Sweep       |   ⭐   |   ⭐   |
 | Day🎄02 | Dive!             |   ⭐   |   ⭐   |
 | Day🎄03 | Binary Diagnostic |   ⭐   |   ⭐   |
-| Day🎄04 |                   |        |        |
+| Day🎄04 | Giant Squid       |   ⭐   |   ⭐   |
 | Day🎄05 |                   |        |        |
 | Day🎄06 |                   |        |        |
 | Day🎄07 |                   |        |        |
@@ -53,9 +53,9 @@ $ poetry shell
 $ aoc_run.py
 2021.03
   2021.03.part1: 2640986
-    (100, 1): (0.296106 sec, 0.003089 sec) 
+    (100, 1): (0.296106 sec, 0.003089 sec)
   2021.03.trie_part2: 6822109
-    (100, 1): (0.527668 sec, 0.007096 sec) 
+    (100, 1): (0.527668 sec, 0.007096 sec)
 ```
 
 ## run single day/part
@@ -70,16 +70,16 @@ $ aoc_run.py [-y year] [day] [part]
 $ aoc_run.py all
 2021.01
   2021.01.old_part1: 1655
-    (100, 1): (0.010870 sec, 0.000137 sec) 
+    (100, 1): (0.010870 sec, 0.000137 sec)
   2021.01.part1: 1655
-    (100, 1): (0.019144 sec, 0.000193 sec) 
+    (100, 1): (0.019144 sec, 0.000193 sec)
   2021.01.part2: 1683
-    (100, 1): (0.018879 sec, 0.000193 sec) 
+    (100, 1): (0.018879 sec, 0.000193 sec)
 2021.02
   2021.02.part1: 1561344
-    (100, 1): (0.008623 sec, 0.000087 sec) 
+    (100, 1): (0.008623 sec, 0.000087 sec)
   2021.02.part2: 1848454425
-    (100, 1): (0.011373 sec, 0.000118 sec) 
+    (100, 1): (0.011373 sec, 0.000118 sec)
 ```
 
 # Example
@@ -88,18 +88,13 @@ $ aoc_run.py all
 
 # Create files:
 
-```
-mkdir -p ${year}/${day}
-touch $_/{__init__.py,input}
-```
+`mkdir -p ${year}/${day} && touch $_/{__init__.py,input}`
 
 ## input data
 
-save input data to `part${part}.input` files.
+save input data to `input` files.
 
 ## coding
-
-edit `${year}/${day}/__init__.py`:
 
 Create function name `cast_input` to cast inputs.
 
