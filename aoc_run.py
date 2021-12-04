@@ -68,7 +68,7 @@ class RunCommand(BaseCommand):
                 with open(input_file) as f:
                     input_data = cast_func(f.read())
                 for _, func in list(filter(lambda x: x[0].endswith(f'part{part}'), funcs)):
-                    print(' '*2 + func.__name__, end=' = ')
+                    print(' '*2 + f'{day_module.__name__}.{func.__name__}: ', end='')
                     try:
                         output, tit, time = self._run(func, input_data)
                         print(output)
