@@ -1,5 +1,7 @@
-def cast_input(line):
-    return line
+def cast_input(inputs):
+    return [
+        x for x in inputs.split('\n')
+    ]
 
 
 def part1(inputs):

@@ -66,7 +66,7 @@ class RunCommand(BaseCommand):
                     if not Path(input_file).is_file():
                         continue
                 with open(input_file) as f:
-                    input_data = list(map(cast_func, f.read().split('\n')))
+                    input_data = cast_func(f.read())
                 for _, func in list(filter(lambda x: x[0].endswith(f'part{part}'), funcs)):
                     print(' '*2 + func.__name__, end=' = ')
                     try:

@@ -1,6 +1,10 @@
-def cast_input(line):
-    d, v = line.split()
-    return d, int(v)
+def cast_input(inputs):
+    def cast_line(line):
+        d, v = line.split()
+        return d, int(v)
+    return [
+        cast_line(line) for line in inputs.split('\n')
+    ]
 
 
 def part1(inputs):

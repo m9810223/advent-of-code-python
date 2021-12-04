@@ -101,20 +101,14 @@ save input data to `part${part}.input` files.
 
 edit `${year}/${day}/__init__.py`:
 
-Create function name `cast_input` or `part${part}_cast_input` to cast inputs.
+Create function name `cast_input` to cast inputs.
 
 ```python
 # shared
-def cast_input(line):
-    d, v = line.split()
-    return d, int(v)
-
-
-# separated
-def part1_cast_input(line):
-    return int(line)
-def part2_cast_input(line):
-    return int(line)
+def cast_input(inputs):
+    return [
+        x for x in inputs.split('\n')
+    ]
 ```
 
 Create function to solve puzzle -- function name ends with `part1` or `part2`
