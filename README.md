@@ -6,33 +6,33 @@ Advent of code Python solutions and CLI tool.
 
 <summary>2021</summary>
 
-|  2021   | Puzzle Name       | Part 1 | Part 2 |
-| :-----: | :---------------- | :----: | :----: |
-| Day🎄01 | Sonar Sweep       |   ⭐   |   ⭐   |
-| Day🎄02 | Dive!             |   ⭐   |   ⭐   |
-| Day🎄03 | Binary Diagnostic |   ⭐   |   ⭐   |
-| Day🎄04 | Giant Squid       |   ⭐   |   ⭐   |
-| Day🎄05 |                   |        |        |
-| Day🎄06 |                   |        |        |
-| Day🎄07 |                   |        |        |
-| Day🎄08 |                   |        |        |
-| Day🎄09 |                   |        |        |
-| Day🎄10 |                   |        |        |
-| Day🎄11 |                   |        |        |
-| Day🎄12 |                   |        |        |
-| Day🎄13 |                   |        |        |
-| Day🎄14 |                   |        |        |
-| Day🎄15 |                   |        |        |
-| Day🎄16 |                   |        |        |
-| Day🎄17 |                   |        |        |
-| Day🎄18 |                   |        |        |
-| Day🎄19 |                   |        |        |
-| Day🎄20 |                   |        |        |
-| Day🎄21 |                   |        |        |
-| Day🎄22 |                   |        |        |
-| Day🎄23 |                   |        |        |
-| Day🎄24 |                   |        |        |
-| Day🎄25 |                   |        |        |
+|  2021   | Puzzle Name          | Part 1 | Part 2 |
+| :-----: | :------------------- | :----: | :----: |
+| Day🎄01 | Sonar Sweep          |   ⭐   |   ⭐   |
+| Day🎄02 | Dive!                |   ⭐   |   ⭐   |
+| Day🎄03 | Binary Diagnostic    |   ⭐   |   ⭐   |
+| Day🎄04 | Giant Squid          |   ⭐   |   ⭐   |
+| Day🎄05 | Hydrothermal Venture |   ⭐   |   ⭐   |
+| Day🎄06 | Lanternfish          |   ⭐   |   ⭐   |
+| Day🎄07 |                      |        |        |
+| Day🎄08 |                      |        |        |
+| Day🎄09 |                      |        |        |
+| Day🎄10 |                      |        |        |
+| Day🎄11 |                      |        |        |
+| Day🎄12 |                      |        |        |
+| Day🎄13 |                      |        |        |
+| Day🎄14 |                      |        |        |
+| Day🎄15 |                      |        |        |
+| Day🎄16 |                      |        |        |
+| Day🎄17 |                      |        |        |
+| Day🎄18 |                      |        |        |
+| Day🎄19 |                      |        |        |
+| Day🎄20 |                      |        |        |
+| Day🎄21 |                      |        |        |
+| Day🎄22 |                      |        |        |
+| Day🎄23 |                      |        |        |
+| Day🎄24 |                      |        |        |
+| Day🎄25 |                      |        |        |
 
 </details>
 
@@ -52,10 +52,12 @@ $ poetry shell
 ```
 $ aoc_run.py
 2021.03
-  2021.03.part1: 2640986
-    (100, 1): (0.296106 sec, 0.003089 sec)
-  2021.03.trie_part2: 6822109
-    (100, 1): (0.527668 sec, 0.007096 sec)
+  part-1
+    ƒ part1
+      0.190877 2640986
+  part-2
+    ƒ trie_part2
+      0.335679 6822109
 ```
 
 ## run single day/part
@@ -69,17 +71,30 @@ $ aoc_run.py [-y year] [day] [part]
 ```
 $ aoc_run.py all
 2021.01
-  2021.01.old_part1: 1655
-    (100, 1): (0.010870 sec, 0.000137 sec)
-  2021.01.part1: 1655
-    (100, 1): (0.019144 sec, 0.000193 sec)
-  2021.01.part2: 1683
-    (100, 1): (0.018879 sec, 0.000193 sec)
+  part-1
+    ƒ old_part1
+      0.007498 1655
+    ƒ part1
+      0.013324 1655
+  part-2
+    ƒ part2
+      0.012959 1683
+
 2021.02
-  2021.02.part1: 1561344
-    (100, 1): (0.008623 sec, 0.000087 sec)
-  2021.02.part2: 1848454425
-    (100, 1): (0.011373 sec, 0.000118 sec)
+  part-1
+    ƒ part1
+      0.005937 1561344
+  part-2
+    ƒ part2
+      0.007568 1848454425
+
+2021.03
+  part-1
+    ƒ part1
+      0.190877 2640986
+  part-2
+    ƒ trie_part2
+      0.335679 6822109
 ```
 
 # Example
