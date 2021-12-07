@@ -4,8 +4,6 @@ from cleo import Application, Command as BaseCommand
 import inspect
 from importlib import import_module
 from pathlib import Path
-from traceback import print_exc
-from time import perf_counter
 from timeit import timeit
 from functools import wraps
 
@@ -16,11 +14,9 @@ ROOT_PATH = Path(__file__).resolve().parent
 def perf(f):
     @wraps(f)
     def wrapper(*args, **kwds):
-        start_time = perf_counter()
         output = f(*args, **kwds)
-        time = perf_counter() - start_time
         tit = timeit('f(*args, **kwds)', number=10**2, globals=locals())
-        return output, tit, time
+        return output, tit
     return wrapper
 
 
@@ -67,15 +63,17 @@ class RunCommand(BaseCommand):
                         continue
                 with open(input_file) as f:
                     input_data = cast_func(f.read())
+                print(' '*2 + f'part-{part}')
                 for _, func in list(filter(lambda x: x[0].endswith(f'part{part}'), funcs)):
-                    print(' '*2 + f'{day_module.__name__}.{func.__name__}: ', end='')
+                    output, tit = None, -1
                     try:
-                        output, tit, time = self._run(func, input_data)
-                        print(output)
-                        print(' '*4 + '\033[90m'+f'(100, 1): ({tit:f} sec, {time:f} sec)', '\033[0m')
-                    except BaseException:
-                        print_exc()
-        print()
+                        output, tit = self._run(func, input_data)
+                    except BaseException as e:
+                        output = e
+                    print(' '*4+f'ƒ {func.__name__}',)
+                    print(' '*6+'\033[90m'+f'{tit:f}'+'\033[0m', output)
+
+            print()
 
     @perf
     def _run(self, module, input_data):
