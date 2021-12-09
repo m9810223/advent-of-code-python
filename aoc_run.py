@@ -65,12 +65,12 @@ class RunCommand(BaseCommand):
                     input_data = cast_func(f.read())
                 print(' '*2 + f'part-{part}')
                 for _, func in list(filter(lambda x: x[0].endswith(f'part{part}'), funcs)):
+                    print(' '*4+f'ƒ {func.__name__}',)
                     output, tit = None, -1
                     try:
                         output, tit = self._run(func, input_data)
                     except BaseException as e:
                         output = e
-                    print(' '*4+f'ƒ {func.__name__}',)
                     print(' '*6+'\033[90m'+f'{tit:f}'+'\033[0m', output)
 
             print()
