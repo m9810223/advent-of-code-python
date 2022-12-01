@@ -2,38 +2,27 @@ from pprint import pprint
 
 
 def cast_input(inputs):
-    return [
-        [
-            part.split() for part in line.split(' | ')
-        ]
-        for line in inputs.split('\n')
-    ]
+    return [[part.split() for part in line.split(' | ')] for line in inputs.split('\n')]
 
 
 def part1(inputs):
     res = 0
     for _, a in inputs:
-        res += len([
-            x for x in a if len(x) in (2, 3, 4, 7)
-        ])
+        res += len([x for x in a if len(x) in (2, 3, 4, 7)])
     return res
 
 
 {
     1: 2,  # *   c  f
     # _        0010010
-
     7: 3,  # * a c  f
     # _        1010010
-
     4: 4,  # *  bcd f
     # _        0111010
-
     2: 5,  # _ a cde g
     3: 5,  # _ a cd fg
     5: 5,  # _ ab d fg
     # _        3123123
-
     0: 6,  # _ abc efg
     6: 6,  # _ ab defg
     9: 6,  # _ abcd fg
@@ -69,12 +58,10 @@ def gen_dic(b, a):
     for x in b:
         l = len(x)
         for c in x:
-            dic[c] = dic.get(c, [0]*8)
+            dic[c] = dic.get(c, [0] * 8)
             dic[c][l] += 1
 
-    print(
-        dic
-    )
+    print(dic)
 
 
 def part2(inputs):

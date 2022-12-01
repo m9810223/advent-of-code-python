@@ -1,8 +1,5 @@
 def cast_input(inputs):
-    return [
-        int(string)
-        for string in inputs.split(',')
-    ]
+    return [int(string) for string in inputs.split(',')]
 
 
 class Lanternfish:
@@ -42,14 +39,13 @@ def cache_recur_part1(inputs, days=80):
         if not day > 0:
             res = 1
         elif time == 0:
-            res = f(6, day-1) + f(8, day-1)
+            res = f(6, day - 1) + f(8, day - 1)
         else:
-            res = f(time-1, day-1)
+            res = f(time - 1, day - 1)
         cache[(time, day)] = res
         return res
-    return sum(
-        f(x, days) for x in inputs
-    )
+
+    return sum(f(x, days) for x in inputs)
 
 
 def cache_recur_part2(inputs):

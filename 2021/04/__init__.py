@@ -1,15 +1,9 @@
 def cast_input(inputs):
-    bingo, *boards = inputs.split('\n'*2)
+    bingo, *boards = inputs.split('\n' * 2)
 
     bingo = [int(x) for x in bingo.split(',')]
     boards = [
-        [
-            [
-                int(x) for x in row.split()
-            ]
-            for row in board.split('\n')
-        ]
-        for board in boards
+        [[int(x) for x in row.split()] for row in board.split('\n')] for board in boards
     ]
     return bingo, boards
 
@@ -17,8 +11,8 @@ def cast_input(inputs):
 class Board:
     def __init__(self, board):
         self._is_win = False
-        self._row_marked = [0]*5
-        self._col_marked = [0]*5
+        self._row_marked = [0] * 5
+        self._col_marked = [0] * 5
         self.numbers = {}
         for row in range(5):
             for col in range(5):

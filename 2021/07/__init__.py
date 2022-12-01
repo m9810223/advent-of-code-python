@@ -1,8 +1,5 @@
 def cast_input(inputs):
-    return [
-        int(string)
-        for string in inputs.split(',')
-    ]
+    return [int(string) for string in inputs.split(',')]
 
 
 def median_part1(inputs):
@@ -12,34 +9,30 @@ def median_part1(inputs):
     if l % 2:
         m = inputs[h]
     else:
-        m = (inputs[h] + inputs[h-1])//2
+        m = (inputs[h] + inputs[h - 1]) // 2
 
     res = 0
     for x in inputs:
-        res += abs(m-x)
+        res += abs(m - x)
     return res
 
 
 def naive_part1(inputs):
     res = min(
-        sum(abs(x-i) for x in inputs)
-        for i in range(min(inputs), 1+max(inputs))
+        sum(abs(x - i) for x in inputs) for i in range(min(inputs), 1 + max(inputs))
     )
     raise RuntimeError(f'{res}, slow')
 
 
 def f(x):
-    return (1+x)*x//2
+    return (1 + x) * x // 2
 
 
 def naive_part2(inputs):
     inputs = sorted(inputs)
     res = float('inf')
-    for i in range(min(inputs), 1+max(inputs)):
-        new = sum(
-            f(abs(i-x))
-            for x in inputs
-        )
+    for i in range(min(inputs), 1 + max(inputs)):
+        new = sum(f(abs(i - x)) for x in inputs)
         if new < res:
             res = new
             continue
@@ -50,12 +43,7 @@ def average_part2(inputs):
     # not proved that the ans between [average.floor, average.ceil]
     inputs = sorted(inputs)
     average = sum(inputs) // len(inputs)
-    return min(
-        sum(
-            f(abs(average+y-x)) for x in inputs
-        )
-        for y in range(2)
-    )
+    return min(sum(f(abs(average + y - x)) for x in inputs) for y in range(2))
 
 
 """

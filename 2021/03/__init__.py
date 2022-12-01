@@ -1,17 +1,15 @@
 def cast_input(inputs):
-    return [
-        x for x in inputs.split('\n')
-    ]
+    return [x for x in inputs.split('\n')]
 
 
 def part1(inputs):
     l = len(inputs[0])
-    gamma = [0]*l
+    gamma = [0] * l
     for line in inputs:
         for i in range(l):
-            gamma[i] += (-1)**(line[i] == '0')
+            gamma[i] += (-1) ** (line[i] == '0')
     gamma = int(''.join(str(int(x > 0)) for x in gamma), 2)
-    return gamma*(2**l-1-gamma)
+    return gamma * (2**l - 1 - gamma)
 
 
 def trie_part2(inputs):
@@ -37,4 +35,4 @@ def trie_part2(inputs):
     oxygen = int(find(root), 2)
     CO2 = int(find(root, False), 2)
 
-    return oxygen*CO2
+    return oxygen * CO2

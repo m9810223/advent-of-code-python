@@ -1,7 +1,5 @@
 def cast_input(inputs):
-    return [
-        int(x) for x in inputs.split('\n')
-    ]
+    return [int(x) for x in inputs.split('\n')]
 
 
 def old_part1(inputs):
@@ -16,8 +14,8 @@ def old_part1(inputs):
 
 def part2(inputs, offset=3):
     res = 0
-    for i in range(len(inputs)-offset):
-        if inputs[i+offset] > inputs[i]:
+    for i in range(len(inputs) - offset):
+        if inputs[i + offset] > inputs[i]:
             res += 1
     return res
 
