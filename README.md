@@ -2,16 +2,16 @@
 
 Advent of code Python solutions and CLI tool.
 
-<details>
+<!-- <details> -->
 
-<summary>2022</summary>
+<!-- <summary>2022</summary> -->
 
 |  2022   | Puzzle Name             | Part 1 | Part 2 |
 | :-----: | :---------------------- | :----: | :----: |
 | Day🎄01 | Calorie Counting        |   ⭐   |   ⭐   |
 | Day🎄02 | Rock Paper Scissors     |   ⭐   |   ⭐   |
 | Day🎄03 | Rucksack Reorganization |   ⭐   |   ⭐   |
-| Day🎄04 |                         |        |        |
+| Day🎄04 | Camp Cleanup            |   ⭐   |   ⭐   |
 | Day🎄05 |                         |        |        |
 | Day🎄06 |                         |        |        |
 | Day🎄07 |                         |        |        |
@@ -34,7 +34,7 @@ Advent of code Python solutions and CLI tool.
 | Day🎄24 |                         |        |        |
 | Day🎄25 |                         |        |        |
 
-</details>
+<!-- </details> -->
 
 <details>
 

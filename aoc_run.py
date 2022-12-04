@@ -17,7 +17,7 @@ def perf(f):
     @wraps(f)
     def wrapper(*args, **kwds):
         output = f(*args, **kwds)
-        tit = timeit('f(*args, **kwds)', number=10**2, globals=locals())
+        tit = timeit('f(*args, **kwds)', number=0, globals=locals())
         return output, tit
 
     return wrapper
