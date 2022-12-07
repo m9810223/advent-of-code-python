@@ -14,7 +14,7 @@ Advent of code Python solutions and CLI tool.
 | Day🎄04 | Camp Cleanup            |   ⭐   |   ⭐   |
 | Day🎄05 | Supply Stacks           |   ⭐   |   ⭐   |
 | Day🎄06 | Tuning Trouble          |   ⭐   |   ⭐   |
-| Day🎄07 |                         |        |        |
+| Day🎄07 | No Space Left On Device |   ⭐   |   ⭐   |
 | Day🎄08 |                         |        |        |
 | Day🎄09 |                         |        |        |
 | Day🎄10 |                         |        |        |
