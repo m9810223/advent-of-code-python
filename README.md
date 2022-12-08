@@ -15,7 +15,7 @@ Advent of code Python solutions and CLI tool.
 | Day🎄05 | Supply Stacks           |   ⭐   |   ⭐   |
 | Day🎄06 | Tuning Trouble          |   ⭐   |   ⭐   |
 | Day🎄07 | No Space Left On Device |   ⭐   |   ⭐   |
-| Day🎄08 |                         |        |        |
+| Day🎄08 | Treetop Tree House      |   ⭐   |   ⭐   |
 | Day🎄09 |                         |        |        |
 | Day🎄10 |                         |        |        |
 | Day🎄11 |                         |        |        |
