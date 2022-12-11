@@ -16,7 +16,7 @@ Advent of code Python solutions and CLI tool.
 | Day🎄06 | Tuning Trouble          |   ⭐   |   ⭐   |
 | Day🎄07 | No Space Left On Device |   ⭐   |   ⭐   |
 | Day🎄08 | Treetop Tree House      |   ⭐   |   ⭐   |
-| Day🎄09 |                         |        |        |
+| Day🎄09 | Rope Bridge             |   ⭐   |   ⭐   |
 | Day🎄10 |                         |        |        |
 | Day🎄11 |                         |        |        |
 | Day🎄12 |                         |        |        |
@@ -77,8 +77,8 @@ Advent of code Python solutions and CLI tool.
 ## setup
 
 ```
-$ poetry install
-$ poetry shell
+poetry install
+poetry shell
 ```
 
 ## run latest day
@@ -97,7 +97,7 @@ $ aoc_run.py
 ## run single day/part
 
 ```
-$ aoc_run.py [-y year] [day] [part]
+aoc_run.py [-y year] [day] [part]
 ```
 
 ## run all
@@ -135,7 +135,7 @@ $ aoc_run.py all
 
 [`=> 2021/01/__init__.py`](2021/01/__init__.py)
 
-# Create files:
+# Create files
 
 `mkdir -p ${year}/${day} && touch $_/{__init__.py,input}`
 
