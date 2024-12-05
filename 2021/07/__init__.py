@@ -1,5 +1,5 @@
 def cast_input(inputs):
-    return [int(string) for string in inputs.split(',')]
+    return [int(string) for string in inputs.split(",")]
 
 
 def median_part1(inputs):
@@ -18,10 +18,8 @@ def median_part1(inputs):
 
 
 def naive_part1(inputs):
-    res = min(
-        sum(abs(x - i) for x in inputs) for i in range(min(inputs), 1 + max(inputs))
-    )
-    raise RuntimeError(f'{res}, slow')
+    res = min(sum(abs(x - i) for x in inputs) for i in range(min(inputs), 1 + max(inputs)))
+    raise RuntimeError(f"{res}, slow")
 
 
 def f(x):
@@ -30,13 +28,13 @@ def f(x):
 
 def naive_part2(inputs):
     inputs = sorted(inputs)
-    res = float('inf')
+    res = float("inf")
     for i in range(min(inputs), 1 + max(inputs)):
         new = sum(f(abs(i - x)) for x in inputs)
         if new < res:
             res = new
             continue
-        raise RuntimeError(f'{res}, slow')
+        raise RuntimeError(f"{res}, slow")
 
 
 def average_part2(inputs):

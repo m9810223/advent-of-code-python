@@ -1,8 +1,5 @@
 def cast_input(inputs):
-    return [
-        [int(x) for l in line.split(' -> ') for x in l.split(',')]
-        for line in inputs.split('\n')
-    ]
+    return [[int(x) for l in line.split(" -> ") for x in l.split(",")] for line in inputs.split("\n")]
 
 
 def new_part1(inputs):

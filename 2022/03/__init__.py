@@ -5,7 +5,7 @@ def cast_input(inputs: str):
     return inputs.splitlines()
 
 
-LOWERCASE, UPPERCASE = ord('a') - 1, ord('A') - 1
+LOWERCASE, UPPERCASE = ord("a") - 1, ord("A") - 1
 
 
 def convert(char):

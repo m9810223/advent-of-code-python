@@ -9,14 +9,14 @@ def _parse_crates(inputs: str):
 
 def _parse_procedure(inputs: str):
     def parse(moving: str):
-        m = moving.split(' ')
+        m = moving.split(" ")
         return list(map(int, (m[i] for i in range(1, len(m), 2))))
 
     return list(map(parse, inputs.splitlines()))
 
 
 def cast_input(inputs: str):
-    crates, procedure = inputs.split('\n' * 2)
+    crates, procedure = inputs.split("\n" * 2)
     return _parse_crates(crates), _parse_procedure(procedure)
 
 
@@ -27,7 +27,7 @@ def crane(crates: list[list[str]], move: int, from_: int, to: int):
 def part1(inputs: tuple[list[list[str]], list[list[int]]]):
     crates, procedure = inputs
     [crane(crates, *x) for x in procedure]
-    return ''.join([x[-1] for x in crates])
+    return "".join([x[-1] for x in crates])
 
 
 def crane9001(crates: list[list[str]], move: int, from_: int, to: int):
@@ -39,4 +39,4 @@ def crane9001(crates: list[list[str]], move: int, from_: int, to: int):
 def part2(inputs: tuple[list[list[str]], list[list[int]]]):
     crates, procedure = inputs
     [crane9001(crates, *x) for x in procedure]
-    return ''.join([x[-1] for x in crates])
+    return "".join([x[-1] for x in crates])

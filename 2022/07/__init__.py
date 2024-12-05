@@ -6,19 +6,19 @@ from typing import Literal
 def cast_input(inputs: str):
     def parse_ls(line: str):
         info, name = line.split()
-        return info if info == 'dir' else int(info), name
+        return info if info == "dir" else int(info), name
 
     def parse_output(output: str):
         if not output:
             return []
 
-        return list(map(parse_ls, filter(bool, output.split('\n'))))
+        return list(map(parse_ls, filter(bool, output.split("\n"))))
 
     def parse_interactivity(interactivity: str):
-        in_, out = interactivity.split('\n', maxsplit=1)
+        in_, out = interactivity.split("\n", maxsplit=1)
         return in_, parse_output(out)
 
-    return list(map(parse_interactivity, filter(bool, inputs.split('$ '))))
+    return list(map(parse_interactivity, filter(bool, inputs.split("$ "))))
 
 
 class Pwd:
@@ -26,7 +26,7 @@ class Pwd:
         self._pwd: list[str] = []
 
     def cd(self, d: str):
-        if d != '..':
+        if d != "..":
             return self._pwd.append(d)
 
         self._pwd.pop()
@@ -41,14 +41,14 @@ class Dir:
         self.dirs: dict[str, Dir] = {}
         self.files: dict[str, int] = {}
 
-    def read_ls(self, pwd: list[str], infos: list[tuple[int | Literal['dir'], str]]):
+    def read_ls(self, pwd: list[str], infos: list[tuple[int | Literal["dir"], str]]):
         if pwd:
             p, *ps = pwd
             self.dirs[p].read_ls(ps, infos)
             return
 
         for info, name in infos:
-            if info == 'dir':
+            if info == "dir":
                 self.dirs[name] = Dir()
                 continue
             self.files[name] = info
@@ -67,11 +67,11 @@ class Dir:
         return pformat(self.files | self.dirs)
 
 
-def create_root(inputs: list[tuple[str, list[tuple[int | Literal['dir'], str]]]]):
+def create_root(inputs: list[tuple[str, list[tuple[int | Literal["dir"], str]]]]):
     root = Dir()
     pwd = Pwd()
     for in_, out in inputs:
-        if in_.startswith('cd '):
+        if in_.startswith("cd "):
             cd, d = in_.split(maxsplit=1)
             pwd.cd(d)
             continue

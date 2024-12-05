@@ -5,7 +5,7 @@ def cast_input(inputs: str):
 
 
 N = 3
-A, X = ord('A'), ord('X')
+A, X = ord("A"), ord("X")
 
 SHIFT = N - X % N
 

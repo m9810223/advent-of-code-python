@@ -6,7 +6,7 @@ def cast_input(inputs):
 
 
 def detect(inputs: str, n: int):
-    string = ' ' + inputs
+    string = " " + inputs
     c = collections.Counter(string[:n])
     for i in range(n, len(string)):
         c.subtract([string[i - n]]), c.update([string[i]])

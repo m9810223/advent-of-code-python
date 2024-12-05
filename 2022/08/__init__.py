@@ -3,12 +3,12 @@ def cast_input(inputs: str):
 
 
 def sight(I: int, J: int, i: int, j: int, di: int, dj: int):
-    '''
+    """
     top    -> di,dj = -1, 0
     left   -> di,dj =  0,-1
     bottom -> di,dj =  1, 0
     right  -> di,dj =  0, 1
-    '''
+    """
     steps = min([I, I - i, i + 1][di], [J, J - j, j + 1][dj])
     return ((i + s * di, j + s * dj) for s in range(steps))
 
@@ -29,9 +29,7 @@ def part1(inputs: list[list[int]]):
         fi, fj = next(line)
         return all(inputs[curr_i][curr_j] < inputs[fi][fj] for curr_i, curr_j in line)
 
-    return sum(
-        any(visible(i, j, *d) for d in DIRECTIONS) for i in range(I) for j in range(J)
-    )
+    return sum(any(visible(i, j, *d) for d in DIRECTIONS) for i in range(I) for j in range(J))
 
 
 def mul(it):

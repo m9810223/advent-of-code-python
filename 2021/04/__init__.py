@@ -1,10 +1,8 @@
 def cast_input(inputs):
-    bingo, *boards = inputs.split('\n' * 2)
+    bingo, *boards = inputs.split("\n" * 2)
 
-    bingo = [int(x) for x in bingo.split(',')]
-    boards = [
-        [[int(x) for x in row.split()] for row in board.split('\n')] for board in boards
-    ]
+    bingo = [int(x) for x in bingo.split(",")]
+    boards = [[[int(x) for x in row.split()] for row in board.split("\n")] for board in boards]
     return bingo, boards
 
 

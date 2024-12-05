@@ -3,17 +3,17 @@ def cast_input(inputs):
         d, v = line.split()
         return d, int(v)
 
-    return [cast_line(line) for line in inputs.split('\n')]
+    return [cast_line(line) for line in inputs.split("\n")]
 
 
 def part1(inputs):
     depth = position = 0
     for c, x in inputs:
-        if c == 'forward':
+        if c == "forward":
             position += x
-        elif c == 'down':
+        elif c == "down":
             depth += x
-        elif c == 'up':
+        elif c == "up":
             depth -= x
     return depth * position
 
@@ -21,11 +21,11 @@ def part1(inputs):
 def part2(inputs):
     aim = depth = position = 0
     for c, x in inputs:
-        if c == 'down':
+        if c == "down":
             aim += x
-        elif c == 'up':
+        elif c == "up":
             aim -= x
-        elif c == 'forward':
+        elif c == "forward":
             position += x
             depth += aim * x
     return depth * position

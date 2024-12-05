@@ -1,6 +1,6 @@
 def cast_input(inputs: str):
     return map(
-        lambda x: map(lambda x: map(int, str(x).split('-')), str(x).split(',')),
+        lambda x: map(lambda x: map(int, str(x).split("-")), str(x).split(",")),
         inputs.splitlines(),
     )
 

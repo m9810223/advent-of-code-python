@@ -2,7 +2,7 @@ from pprint import pprint
 
 
 def cast_input(inputs):
-    return [[part.split() for part in line.split(' | ')] for line in inputs.split('\n')]
+    return [[part.split() for part in line.split(" | ")] for line in inputs.split("\n")]
 
 
 def part1(inputs):
@@ -29,26 +29,26 @@ def part1(inputs):
     # _        3322233
 }
 l_map = {
-    'abcefg': 0,
-    'cf': 1,
-    'acdeg': 2,
-    'acdfg': 3,
-    'bcdf': 4,
-    'abdfg': 5,
-    'abdefg': 6,
-    'acf': 7,
-    'abcdefg': 8,
-    'abcdfg': 9,
+    "abcefg": 0,
+    "cf": 1,
+    "acdeg": 2,
+    "acdfg": 3,
+    "bcdf": 4,
+    "abdfg": 5,
+    "abdefg": 6,
+    "acf": 7,
+    "abcdefg": 8,
+    "abcdfg": 9,
 }
 
 c_map = {
-    '01033': 'a',
-    '00113': 'b',
-    '11122': 'c',
-    '00132': 'd',
-    '00012': 'e',
-    '11123': 'f',
-    '00033': 'g',
+    "01033": "a",
+    "00113": "b",
+    "11122": "c",
+    "00132": "d",
+    "00012": "e",
+    "11123": "f",
+    "00033": "g",
 }
 
 
@@ -67,5 +67,5 @@ def gen_dic(b, a):
 def part2(inputs):
     ...
     for b, a in inputs:
-        dic = gen_dic(b, a)
+        _ = gen_dic(b, a)
         exit()

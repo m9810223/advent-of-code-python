@@ -1,5 +1,5 @@
 def cast_input(inputs):
-    return [int(string) for string in inputs.split(',')]
+    return [int(string) for string in inputs.split(",")]
 
 
 class Lanternfish:
@@ -14,7 +14,7 @@ class Lanternfish:
         return True  # spawn
 
     def __repr__(self):
-        return f'{self.time}'
+        return f"{self.time}"
 
 
 def naive_oo_part1(inputs):
@@ -27,7 +27,7 @@ def naive_oo_part1(inputs):
                 new_fishes.append(Lanternfish())
         fishes.extend(new_fishes)
     res = len(fishes)
-    raise RuntimeError(f'{res}, slow')
+    raise RuntimeError(f"{res}, slow")
 
 
 def cache_recur_part1(inputs, days=80):
