@@ -1,12 +1,13 @@
 #!/usr/bin/env python
-import inspect
 from functools import wraps
 from importlib import import_module
+import inspect
 from pathlib import Path
 from timeit import timeit
 
 from cleo import Application
 from cleo import Command as BaseCommand
+from pydantic import validate_call
 
 
 ROOT_PATH = Path(__file__).resolve().parent
@@ -58,6 +59,7 @@ class RunCommand(BaseCommand):
             for part in parts:
                 path = ROOT_PATH / f"{year}/{day}"
                 cast_func = day_module.__dict__.get(f"part{part}_cast_input", day_module.__dict__["cast_input"])
+                cast_func = validate_call(validate_return=True)(cast_func)
                 input_file = path / f"part{part}.input"
                 if not Path(input_file).is_file():
                     input_file = path / "input"
@@ -67,6 +69,7 @@ class RunCommand(BaseCommand):
                     input_data = cast_func(f.read())
                 print(SEPERATOR + f"part-{part}")
                 for _, func in list(filter(lambda x: x[0].endswith(f"part{part}"), funcs)):
+                    func = validate_call(validate_return=True)(func)
                     print(
                         SEPERATOR * 2 + f"ƒ {func.__name__}",
                     )
