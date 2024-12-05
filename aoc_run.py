@@ -83,8 +83,8 @@ class RunCommand(BaseCommand):
             print()
 
     @perf
-    def _run(self, module, input_data):
-        return module(input_data)
+    def _run(self, func, input_data):
+        return func(input_data)
 
 
 if __name__ == "__main__":
