@@ -2,9 +2,9 @@
 
 Advent of code Python solutions and CLI tool.
 
-<!-- <details> -->
+<details>
 
-<!-- <summary>2022</summary> -->
+<summary>2022</summary>
 
 |  2022   | Puzzle Name             | Part 1 | Part 2 |
 | :-----: | :---------------------- | :----: | :----: |
@@ -34,7 +34,7 @@ Advent of code Python solutions and CLI tool.
 | Day🎄24 |                         |        |        |
 | Day🎄25 |                         |        |        |
 
-<!-- </details> -->
+</details>
 
 <details>
 
@@ -72,18 +72,18 @@ Advent of code Python solutions and CLI tool.
 
 ---
 
-# CLI
+## CLI
 
-## setup
+### setup
 
-```
+```sh
 poetry install
 poetry shell
 ```
 
-## run latest day
+### run latest day
 
-```
+```sh
 $ aoc_run.py
 2021.03
   part-1
@@ -94,15 +94,15 @@ $ aoc_run.py
       0.335679 6822109
 ```
 
-## run single day/part
+### run single day/part
 
-```
+```sh
 aoc_run.py [-y year] [day] [part]
 ```
 
-## run all
+### run all
 
-```
+```sh
 $ aoc_run.py all
 2021.01
   part-1
@@ -131,19 +131,19 @@ $ aoc_run.py all
       0.335679 6822109
 ```
 
-# Example
+## Example
 
 [`=> 2021/01/__init__.py`](2021/01/__init__.py)
 
-# Create files
+## Create files
 
 `mkdir -p ${year}/${day} && touch $_/{__init__.py,input}`
 
-## input data
+### input data
 
 save input data to `input` files.
 
-## coding
+### coding
 
 Create function name `cast_input` to cast inputs.
 
